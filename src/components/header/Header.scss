@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    color: white;
+    background-color: black;
+    &__icon{
+        font-size: 2em;
+    }
+    &__title{
+        h1 {
+            margin: 0;
+        }
+    }
+}

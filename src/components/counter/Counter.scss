@@ -1,0 +1,22 @@
+.float_counter{
+    position: fixed;
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    padding: 1em;
+    border-radius: 15px;
+    bottom: 1em;
+    right: 0.5em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    .player{
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        p{
+            margin: 0;
+        }
+        span {
+            font-family: monospace;
+        }
+    }
+}
