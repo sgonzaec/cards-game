@@ -6,15 +6,21 @@ import DeckClient from "../../client/deckClient";
 const GamePage = ({ readyToStart, setReadyToStart }) => {
   const { playersData } = useContext(PlayersContext);
 
-  const [idPlayerOne, ] = useState(DeckClient.getPlayerId());
-  const [idPlayerOtwo, ] = useState(DeckClient.getPlayerId());
+  const [idPlayerOne, setIdPlayerOne] = useState(null);
+  const [idPlayerOtwo, setIdPlayerOtwo] = useState(null);
+  const [cardsPlayerOne, setCardsPlayerOne] = useState([]);
+  const [cardsPlayerOtwo, setCardsPlayerOtwo] = useState([]);
 
   useEffect(() => {
-    DeckClient.getPlayerId();
+    DeckClient.getPlayerId(setIdPlayerOne);
+    DeckClient.getPlayerId(setIdPlayerOtwo);
   }, []);
 
   useEffect(() => {
-    console.log(idPlayerOne, idPlayerOtwo)
+    if (idPlayerOne && idPlayerOtwo) {
+      DeckClient.getCarts(idPlayerOne, setCardsPlayerOne);
+      DeckClient.getCarts(idPlayerOtwo, setCardsPlayerOtwo);
+    }
   }, [idPlayerOne, idPlayerOtwo]);
 
   return (
@@ -49,11 +55,23 @@ const GamePage = ({ readyToStart, setReadyToStart }) => {
       </div>
       <div className="Game_player playerOne">
         <h2>Jugador {playersData?.playerOne?.name}</h2>
-        <ul className="carts"></ul>
+        <ul className="cards">
+            {cardsPlayerOne.map((card) => (
+                <li key={card.code}>
+                    <img src={card.image} alt={card.code} />
+                </li>
+            ))}
+        </ul>
       </div>
       <div className="Game_player playerTwo">
         <h2>Jugador {playersData?.playerTwo?.name}</h2>
-        <ul className="carts"></ul>
+        <ul className="cards">
+            {cardsPlayerOtwo.map((card) => (
+                <li key={card.code}>
+                    <img src={card.image} alt={card.code} />
+                </li>
+            ))}
+        </ul>
       </div>
     </div>
   );

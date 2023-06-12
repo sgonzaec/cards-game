@@ -6,15 +6,11 @@ const PlayerContextContainer = ({ children }) => {
   const [playersData, setPlayersData] = useState({
     playerOne: {
         name: 'Uno',
-        id: null,
         score: 0,
-        cards: [],
     },
     playerTwo: {
         name: 'Dos',
-        id: null,
         score: 0,
-        cards: [],
     }
   });
 

@@ -1,4 +1,19 @@
 .GamePage {
+
+  ul.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 10px;
+    li img {
+      width: 5em;
+  }
+  }
+
   //buttons
   .namesButton {
     position: absolute;
@@ -10,6 +25,12 @@
     padding: 1em;
     color: black;
     cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .namesButton:hover {
+    border: 1px solid red;
+    color: red;
   }
 
   .containerButton {

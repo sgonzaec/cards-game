@@ -14,7 +14,7 @@ const DeckClient = {
             }
           })
           .then((data) => {
-            callback(data);
+            callback(data.deck_id);
           });
       } catch (error) {
         console.error(error);
@@ -31,7 +31,7 @@ const DeckClient = {
             }
           })
           .then((data) => {
-            callback(data);
+            callback(data.cards);
           });
       } catch (error) {
         console.error(error);
