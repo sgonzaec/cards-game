@@ -20,9 +20,9 @@ const DeckClient = {
         console.error(error);
       }
     },
-    getCarts: async (playerId, callback) => {
+    getCarts: async (amountCards,playerId, callback) => {
       try {
-        await fetch(`${base}/${playerId}/draw/?count=10`, {
+        await fetch(`${base}/${playerId}/draw/?count=${amountCards}`, {
           method: "GET",
         })
           .then((response) => {
