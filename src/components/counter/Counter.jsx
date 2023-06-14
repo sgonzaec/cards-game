@@ -9,11 +9,10 @@ const Counter = () => {
     <div className="float_counter">
       <div className="player">
         <p>Jugador {playersData?.playerOne?.name}</p>
-        <span>Puntos: {playersData?.playerOne?.score}</span>
+        <span>Ronda: {playersData?.playerOne?.round}</span>
       </div>
       <div className="player">
         <p>Jugador {playersData?.playerTwo?.name}</p>
-        <span>Puntos: {playersData?.playerTwo?.score}</span>
       </div>
     </div>
   );

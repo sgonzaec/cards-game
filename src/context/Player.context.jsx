@@ -6,15 +6,15 @@ const PlayerContextContainer = ({ children }) => {
   const [playersData, setPlayersData] = useState({
     playerOne: {
         name: 'Uno',
-        score: 0,
+        round: 0,
+        activeShift : false
     },
     playerTwo: {
         name: 'Dos',
-        score: 0,
+        round: 0,
+        activeShift : false
     }
   });
-
-  console.log({playersData})
 
   const value = {
     playersData,
