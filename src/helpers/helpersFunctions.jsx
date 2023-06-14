@@ -1,5 +1,4 @@
 import DeckClient from "../client/deckClient";
-import generalValues from "./generalValues.json";
 
 const helpersFunctions = {
   askForCard: (

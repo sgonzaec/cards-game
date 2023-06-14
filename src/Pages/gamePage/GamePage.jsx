@@ -136,11 +136,13 @@ const GamePage = ({ readyToStart, setReadyToStart }) => {
       setMatchCounter,
       readyToStart
     );
+
+    // eslint-disable-next-line
   }, [cardsPlayerOne, cardsPlayertwo]);
 
   return (
     <>
-      {matchCounter === 100 ? (
+      {matchCounter === 16 ? (
         <div className="GamePage">
           <div className="center">
             <button
