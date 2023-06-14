@@ -12,8 +12,21 @@
     li img {
       width: 5em;
   }
-  }
+    
+  &.active {
+      border: 7px dotted red;
+    }
 
+    .butom-card{
+      cursor: pointer;
+
+      &.isInactive{
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+    } 
+  
+    }
   //buttons
   .namesButton {
     position: absolute;
@@ -38,6 +51,60 @@
     margin: 4em;
     justify-content: center;
     align-items: center;
+    margin-bottom: 7rem;
+
+    .Game_player_new_card {
+        position: absolute;
+        top: 5rem;
+
+        &.right{
+          right: 12rem;
+        }
+
+        &.left{
+          left: 12rem;
+        }
+    
+        .container-img {
+          h2 {
+            margin: 0px;
+          }
+    
+          img {
+            width: 6em;
+          }
+    
+        }
+    
+        .container-buttoms-new-card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+    
+          .buttom-new-card {
+            width: 80px;
+            height: 30px;
+            cursor: pointer;
+            background: gray;
+            border: 1px solid #91c9ff;
+            outline: none;
+            transition: 1s ease-in-out;
+            color: white;
+            margin: 3px;
+          }
+    
+          .buttom-new-card:nth-child(1):hover {
+            transition: 1s ease-in-out;
+            background: black;
+          }
+
+          .buttom-new-card:nth-child(2):hover {
+            transition: 1s ease-in-out;
+            background: red;
+          }
+        }
+    
+      }
   }
 
   .center {
